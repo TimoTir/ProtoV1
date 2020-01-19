@@ -124,6 +124,7 @@
     <Compile Include="Controllers\AsiakastiedotController.cs" />
     <Compile Include="Controllers\EtusivuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaskutustiedotController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +169,7 @@
     <Content Include="Views\Etusivu\Index.cshtml" />
     <Content Include="Views\Asiakastiedot\Index.cshtml" />
     <Content Include="Views\Asiakastapahtumat\Index.cshtml" />
+    <Content Include="Views\Laskutustiedot\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
