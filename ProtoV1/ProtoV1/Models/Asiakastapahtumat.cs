@@ -14,7 +14,7 @@ namespace ProtoV1.Models
     
     public partial class Asiakastapahtumat
     {
-        public int TapahtumaId { get; set; }
+        public int TapahtumaID { get; set; }
         public int Asiakasnumero { get; set; }
         public System.DateTime Päivämäärä { get; set; }
         public string Yhteydenotto { get; set; }

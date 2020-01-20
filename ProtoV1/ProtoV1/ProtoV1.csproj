@@ -135,40 +135,37 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Asiakasluokittelu.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Asiakastapahtumat.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AsiakkaanPerustiedot.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Laskutustiedot.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Logins.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Postitoimipaikat.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SenioritModel.Context.cs">
+    <Compile Include="Models\Seniorit.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SenioritModel.Context.tt</DependentUpon>
+      <DependentUpon>Seniorit.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SenioritModel.cs">
+    <Compile Include="Models\Seniorit.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SenioritModel.Designer.cs">
+    <Compile Include="Models\Seniorit.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SenioritModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>SenioritModel.tt</DependentUpon>
+      <DependentUpon>Seniorit.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -181,24 +178,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\SenioritModel.Context.tt">
+    <Content Include="Models\Seniorit.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SenioritModel.Context.cs</LastGenOutput>
-      <DependentUpon>SenioritModel.edmx</DependentUpon>
+      <LastGenOutput>Seniorit.Context.cs</LastGenOutput>
+      <DependentUpon>Seniorit.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\SenioritModel.tt">
+    <Content Include="Models\Seniorit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SenioritModel.edmx</DependentUpon>
-      <LastGenOutput>SenioritModel.cs</LastGenOutput>
+      <DependentUpon>Seniorit.edmx</DependentUpon>
+      <LastGenOutput>Seniorit.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\SenioritModel.edmx">
+    <EntityDeploy Include="Models\Seniorit.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SenioritModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Seniorit.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\SenioritModel.edmx.diagram">
-      <DependentUpon>SenioritModel.edmx</DependentUpon>
+    <Content Include="Models\Seniorit.edmx.diagram">
+      <DependentUpon>Seniorit.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
