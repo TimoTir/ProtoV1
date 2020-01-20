@@ -21,7 +21,7 @@ namespace ProtoV1.Models
         public Nullable<bool> Kannettava { get; set; }
         public Nullable<bool> Matkapuhelin { get; set; }
         public Nullable<bool> Tabletti { get; set; }
-        public Nullable<bool> Mokkula { get; set; }
-        public Nullable<bool> Wlan { get; set; }
+        public Nullable<bool> Mokkulanetti { get; set; }
+        public Nullable<bool> Wlannetti { get; set; }
     }
 }

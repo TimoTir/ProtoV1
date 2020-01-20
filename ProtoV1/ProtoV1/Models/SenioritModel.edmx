@@ -16,14 +16,14 @@
           <Property Name="Kannettava" Type="bit" />
           <Property Name="Matkapuhelin" Type="bit" />
           <Property Name="Tabletti" Type="bit" />
-          <Property Name="Mokkula" Type="bit" />
-          <Property Name="Wlan" Type="bit" />
+          <Property Name="Mokkulanetti" Type="bit" />
+          <Property Name="Wlannetti" Type="bit" />
         </EntityType>
         <EntityType Name="Asiakastapahtumat">
           <Key>
-            <PropertyRef Name="TapahtumaID" />
+            <PropertyRef Name="TapahtumaId" />
           </Key>
-          <Property Name="TapahtumaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TapahtumaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Asiakasnumero" Type="int" Nullable="false" />
           <Property Name="Päivämäärä" Type="date" Nullable="false" />
           <Property Name="Yhteydenotto" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -70,6 +70,16 @@
           <Property Name="Postinumero" Type="nchar" MaxLength="5" Nullable="false" />
           <Property Name="Postitoimipaikka" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_Asiakastapahtumat_AsiakkaanPerustiedot">
           <End Role="AsiakkaanPerustiedot" Type="Self.AsiakkaanPerustiedot" Multiplicity="1" />
           <End Role="Asiakastapahtumat" Type="Self.Asiakastapahtumat" Multiplicity="*" />
@@ -78,6 +88,18 @@
               <PropertyRef Name="Asiakasnumero" />
             </Principal>
             <Dependent Role="Asiakastapahtumat">
+              <PropertyRef Name="Asiakasnumero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot">
+          <End Role="AsiakkaanPerustiedot" Type="Self.AsiakkaanPerustiedot" Multiplicity="1" />
+          <End Role="AsiakkaanPerustiedot1" Type="Self.AsiakkaanPerustiedot" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AsiakkaanPerustiedot">
+              <PropertyRef Name="Asiakasnumero" />
+            </Principal>
+            <Dependent Role="AsiakkaanPerustiedot1">
               <PropertyRef Name="Asiakasnumero" />
             </Dependent>
           </ReferentialConstraint>
@@ -113,9 +135,14 @@
           <EntitySet Name="Laskutustiedot" EntityType="Self.Laskutustiedot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Postitoimipaikat" EntityType="Self.Postitoimipaikat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Asiakastapahtumat_AsiakkaanPerustiedot" Association="Self.FK_Asiakastapahtumat_AsiakkaanPerustiedot">
             <End Role="AsiakkaanPerustiedot" EntitySet="AsiakkaanPerustiedot" />
             <End Role="Asiakastapahtumat" EntitySet="Asiakastapahtumat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" Association="Self.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot">
+            <End Role="AsiakkaanPerustiedot" EntitySet="AsiakkaanPerustiedot" />
+            <End Role="AsiakkaanPerustiedot1" EntitySet="AsiakkaanPerustiedot" />
           </AssociationSet>
           <AssociationSet Name="FK_AsiakkaanPerustiedot_Postitoimipaikat" Association="Self.FK_AsiakkaanPerustiedot_Postitoimipaikat">
             <End Role="Postitoimipaikat" EntitySet="Postitoimipaikat" />
@@ -142,14 +169,14 @@
           <Property Name="Kannettava" Type="Boolean" />
           <Property Name="Matkapuhelin" Type="Boolean" />
           <Property Name="Tabletti" Type="Boolean" />
-          <Property Name="Mokkula" Type="Boolean" />
-          <Property Name="Wlan" Type="Boolean" />
+          <Property Name="Mokkulanetti" Type="Boolean" />
+          <Property Name="Wlannetti" Type="Boolean" />
         </EntityType>
         <EntityType Name="Asiakastapahtumat">
           <Key>
-            <PropertyRef Name="TapahtumaID" />
+            <PropertyRef Name="TapahtumaId" />
           </Key>
-          <Property Name="TapahtumaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TapahtumaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Asiakasnumero" Type="Int32" Nullable="false" />
           <Property Name="Päivämäärä" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Yhteydenotto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -169,6 +196,8 @@
           <Property Name="Puhelin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sähköposti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Asiakastapahtumat" Relationship="Self.FK_Asiakastapahtumat_AsiakkaanPerustiedot" FromRole="AsiakkaanPerustiedot" ToRole="Asiakastapahtumat" />
+          <NavigationProperty Name="AsiakkaanPerustiedot1" Relationship="Self.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" FromRole="AsiakkaanPerustiedot" ToRole="AsiakkaanPerustiedot1" />
+          <NavigationProperty Name="AsiakkaanPerustiedot2" Relationship="Self.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" FromRole="AsiakkaanPerustiedot1" ToRole="AsiakkaanPerustiedot" />
           <NavigationProperty Name="Postitoimipaikat" Relationship="Self.FK_AsiakkaanPerustiedot_Postitoimipaikat" FromRole="AsiakkaanPerustiedot" ToRole="Postitoimipaikat" />
           <NavigationProperty Name="Laskutustiedot" Relationship="Self.FK_Laskutustiedot_AsiakkaanPerustiedot" FromRole="AsiakkaanPerustiedot" ToRole="Laskutustiedot" />
         </EntityType>
@@ -202,6 +231,16 @@
           <Property Name="Postitoimipaikka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="AsiakkaanPerustiedot" Relationship="Self.FK_AsiakkaanPerustiedot_Postitoimipaikat" FromRole="Postitoimipaikat" ToRole="AsiakkaanPerustiedot" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_Asiakastapahtumat_AsiakkaanPerustiedot">
           <End Role="AsiakkaanPerustiedot" Type="Self.AsiakkaanPerustiedot" Multiplicity="1" />
           <End Role="Asiakastapahtumat" Type="Self.Asiakastapahtumat" Multiplicity="*" />
@@ -210,6 +249,18 @@
               <PropertyRef Name="Asiakasnumero" />
             </Principal>
             <Dependent Role="Asiakastapahtumat">
+              <PropertyRef Name="Asiakasnumero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot">
+          <End Role="AsiakkaanPerustiedot" Type="Self.AsiakkaanPerustiedot" Multiplicity="1" />
+          <End Role="AsiakkaanPerustiedot1" Type="Self.AsiakkaanPerustiedot" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AsiakkaanPerustiedot">
+              <PropertyRef Name="Asiakasnumero" />
+            </Principal>
+            <Dependent Role="AsiakkaanPerustiedot1">
               <PropertyRef Name="Asiakasnumero" />
             </Dependent>
           </ReferentialConstraint>
@@ -245,9 +296,14 @@
           <EntitySet Name="Laskutustiedot" EntityType="Self.Laskutustiedot" />
           <EntitySet Name="Logins" EntityType="Self.Logins" />
           <EntitySet Name="Postitoimipaikat" EntityType="Self.Postitoimipaikat" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Asiakastapahtumat_AsiakkaanPerustiedot" Association="Self.FK_Asiakastapahtumat_AsiakkaanPerustiedot">
             <End Role="AsiakkaanPerustiedot" EntitySet="AsiakkaanPerustiedot" />
             <End Role="Asiakastapahtumat" EntitySet="Asiakastapahtumat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" Association="Self.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot">
+            <End Role="AsiakkaanPerustiedot" EntitySet="AsiakkaanPerustiedot" />
+            <End Role="AsiakkaanPerustiedot1" EntitySet="AsiakkaanPerustiedot" />
           </AssociationSet>
           <AssociationSet Name="FK_AsiakkaanPerustiedot_Postitoimipaikat" Association="Self.FK_AsiakkaanPerustiedot_Postitoimipaikat">
             <End Role="Postitoimipaikat" EntitySet="Postitoimipaikat" />
@@ -274,15 +330,15 @@
                 <ScalarProperty Name="Kannettava" ColumnName="Kannettava" />
                 <ScalarProperty Name="Matkapuhelin" ColumnName="Matkapuhelin" />
                 <ScalarProperty Name="Tabletti" ColumnName="Tabletti" />
-                <ScalarProperty Name="Mokkula" ColumnName="Mokkula" />
-                <ScalarProperty Name="Wlan" ColumnName="Wlan" />
+                <ScalarProperty Name="Mokkulanetti" ColumnName="Mokkulanetti" />
+                <ScalarProperty Name="Wlannetti" ColumnName="Wlannetti" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Asiakastapahtumat">
             <EntityTypeMapping TypeName="SenioritModel.Asiakastapahtumat">
               <MappingFragment StoreEntitySet="Asiakastapahtumat">
-                <ScalarProperty Name="TapahtumaID" ColumnName="TapahtumaID" />
+                <ScalarProperty Name="TapahtumaId" ColumnName="TapahtumaId" />
                 <ScalarProperty Name="Asiakasnumero" ColumnName="Asiakasnumero" />
                 <ScalarProperty Name="Päivämäärä" ColumnName="Päivämäärä" />
                 <ScalarProperty Name="Yhteydenotto" ColumnName="Yhteydenotto" />
@@ -332,6 +388,17 @@
               <MappingFragment StoreEntitySet="Postitoimipaikat">
                 <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
                 <ScalarProperty Name="Postitoimipaikka" ColumnName="Postitoimipaikka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SenioritModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

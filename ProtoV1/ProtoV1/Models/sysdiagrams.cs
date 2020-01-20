@@ -12,15 +12,12 @@ namespace ProtoV1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Asiakastapahtumat
+    public partial class sysdiagrams
     {
-        public int TapahtumaId { get; set; }
-        public int Asiakasnumero { get; set; }
-        public System.DateTime Päivämäärä { get; set; }
-        public string Yhteydenotto { get; set; }
-        public string Kuvaus { get; set; }
-        public string Ratkaisu { get; set; }
-    
-        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

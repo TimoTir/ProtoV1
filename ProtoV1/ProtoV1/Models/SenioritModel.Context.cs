@@ -31,5 +31,6 @@ namespace ProtoV1.Models
         public DbSet<Laskutustiedot> Laskutustiedot { get; set; }
         public DbSet<Logins> Logins { get; set; }
         public DbSet<Postitoimipaikat> Postitoimipaikat { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

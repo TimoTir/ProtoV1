@@ -29,6 +29,8 @@ namespace ProtoV1.Models
         public string Sähköposti { get; set; }
     
         public virtual ICollection<Asiakastapahtumat> Asiakastapahtumat { get; set; }
+        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot1 { get; set; }
+        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot2 { get; set; }
         public virtual Postitoimipaikat Postitoimipaikat { get; set; }
         public virtual ICollection<Laskutustiedot> Laskutustiedot { get; set; }
     }
