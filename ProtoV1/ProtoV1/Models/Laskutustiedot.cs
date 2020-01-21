@@ -14,7 +14,7 @@ namespace ProtoV1.Models
     
     public partial class Laskutustiedot
     {
-        public int LaskutustietoID { get; set; }
+        public int LaskutustietoId { get; set; }
         public int Asiakasnumero { get; set; }
         public string Etunimi { get; set; }
         public string Sukunimi { get; set; }
