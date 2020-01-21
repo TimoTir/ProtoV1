@@ -12,12 +12,11 @@ namespace ProtoV1.Controllers
     {
         // GET: Asiakastiedot
         private SenioritEntities db = new SenioritEntities();
-
         public ActionResult Index()
-
         {
             SenioritEntities db = new SenioritEntities();
-            return View(db.AsiakkaanPerustiedot.ToList());
+            List<AsiakkaanPerustiedot> model = db.AsiakkaanPerustiedot.ToList();
+            return View();
             //db.Dispose(); << Huom! lisää tämä!
         }
     }
