@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ProtoV1.Models;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace ProtoV1.Controllers
 {
     public class EtusivuController : Controller
