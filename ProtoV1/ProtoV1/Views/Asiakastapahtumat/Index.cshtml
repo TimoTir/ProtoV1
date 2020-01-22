@@ -5,3 +5,34 @@
 
 <h2>Asiakastapahtumat</h2>
 
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Asiakasnumero</th>
+            <th>Päivämäärä</th>
+            <th>Yhteydenotto</th>
+            <th>Tapahtuman kuvaus</th>
+            <th>Ratkaisu</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (ProtoV1.Models.Asiakastapahtumat atap in Model)
+        {
+            <tr>
+                <td>@atap.Asiakasnumero</td>
+                <td>@atap.Päivämäärä</td>
+                <td>@atap.Yhteydenotto</td>
+                <td>@atap.Kuvaus</td>
+                <td>@atap.Ratkaisu</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" value="Lisää uusi tapahtuma" class="btn btn-default" />
+    </div>
+</div>
+
