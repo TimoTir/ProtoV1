@@ -38,7 +38,7 @@ namespace ProtoV1.Controllers
             {
                 ViewBag.LoginMessage = "Login unsuccessfull";
                 ViewBag.LoggedStatus = "Out";
-                LoginsModel.LoginIDErrorMessage = "Tuntematon käyttäjätunnus tai salasana.";
+                LoginsModel.LoginErrorMessage = "Tuntematon käyttäjätunnus tai salasana.";
                 return View("Logins", LoginsModel);
             }
 
