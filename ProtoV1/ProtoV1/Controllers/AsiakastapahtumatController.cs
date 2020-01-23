@@ -14,7 +14,7 @@ namespace ProtoV1.Controllers
         public ActionResult Index()
         {
             SenioritEntities db = new SenioritEntities();
-            return View(db.AsiakkaanPerustiedot.ToList());
+            return View(db.Asiakastapahtumat.ToList());
             //db.Dispose(); << Huom! lisää tämä!
 
 
