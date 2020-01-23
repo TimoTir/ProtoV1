@@ -18,6 +18,7 @@ namespace ProtoV1.Models
         {
             this.Asiakastapahtumat = new HashSet<Asiakastapahtumat>();
             this.Laskutustiedot = new HashSet<Laskutustiedot>();
+            this.Asiakasluokittelu = new HashSet<Asiakasluokittelu>();
         }
     
         public int Asiakasnumero { get; set; }
@@ -31,5 +32,8 @@ namespace ProtoV1.Models
         public virtual ICollection<Asiakastapahtumat> Asiakastapahtumat { get; set; }
         public virtual Postitoimipaikat Postitoimipaikat { get; set; }
         public virtual ICollection<Laskutustiedot> Laskutustiedot { get; set; }
+        public virtual ICollection<Asiakasluokittelu> Asiakasluokittelu { get; set; }
+        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot1 { get; set; }
+        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot2 { get; set; }
     }
 }

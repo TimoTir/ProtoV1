@@ -15,6 +15,8 @@
         <AssociationConnector Association="SenioritModel.FK_Asiakastapahtumat_AsiakkaanPerustiedot" ManuallyRouted="false" />
         <AssociationConnector Association="SenioritModel.FK_AsiakkaanPerustiedot_Postitoimipaikat" ManuallyRouted="false" />
         <AssociationConnector Association="SenioritModel.FK_Laskutustiedot_AsiakkaanPerustiedot" ManuallyRouted="false" />
+        <AssociationConnector Association="SenioritModel.FK_Asiakasluokittelu_AsiakkaanPerustiedot" />
+        <AssociationConnector Association="SenioritModel.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

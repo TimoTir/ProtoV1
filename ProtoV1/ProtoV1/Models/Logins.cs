@@ -17,5 +17,6 @@ namespace ProtoV1.Models
         public int LoginId { get; set; }
         public string Käyttäjätunnus { get; set; }
         public string Salasana { get; set; }
+        public int LoginID { get; set; }
     }
 }

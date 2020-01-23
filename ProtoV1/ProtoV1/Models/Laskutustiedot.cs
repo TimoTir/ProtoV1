@@ -22,6 +22,7 @@ namespace ProtoV1.Models
         public string Osoite { get; set; }
         public string Postinumero { get; set; }
         public string Sähköposti { get; set; }
+        public int LaskutustietoID { get; set; }
     
         public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot { get; set; }
     }
