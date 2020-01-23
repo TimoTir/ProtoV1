@@ -5,5 +5,35 @@
 
 <h2>Asiakasluokittelu</h2>
 
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"> <span class="checkbox-label">Eläkeläisalennus</span>
+</div>
+
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"><span class="checkbox-label">TV</span>
+</div>
+
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"><span class="checkbox-label">Pöytäkone</span>
+</div>
+
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"><span class="checkbox-label">Kannettava</span>
+</div>
+
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"><span class="checkbox-label">Matkapuhelin</span>
+</div>
+<div class="styled-chekbox">
+    <input type="checkbox" checked class="icheck-box-flat"><span class="checkbox-label">Tabletti</span>
+</div>
+    
+
+
+<label class="col-lg-2 control-label">
+    Lisätietoja
+</label>
+<div class="col-lg-10">@Html.TextAreaFor(model => model.Asiakasnumero, new { @class = "tinymce-simple span12", @row = "170", @cols = "45", @width = "40%" })</div>
+
 
 
