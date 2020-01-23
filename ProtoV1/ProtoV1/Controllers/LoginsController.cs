@@ -29,16 +29,16 @@ namespace ProtoV1.Controllers
             if (LoggedUser != null)
             {
                 ViewBag.LoginMessage = "Successfull login";
-                ViewBag.LoginId = LoggedUser.LoginId;
+                ViewBag.LoginId = LoggedUser.LoginID;
                 Session["UserName"] = LoggedUser.Käyttäjätunnus;
-                Session["LoginId"] = LoggedUser.LoginId;
+                Session["LoginId"] = LoggedUser.LoginID;
                 return RedirectToAction("Index", "Etusivu");
             }
             else
             {
                 ViewBag.LoginMessage = "Login unsuccessfull";
                 ViewBag.LoggedStatus = "Out";
-                LoginsModel.LoginIdErrorMessage = "Tuntematon käyttäjätunnus tai salasana.";
+                LoginsModel.LoginIDErrorMessage = "Tuntematon käyttäjätunnus tai salasana.";
                 return View("Logins", LoginsModel);
             }
 
