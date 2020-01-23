@@ -14,7 +14,7 @@ namespace ProtoV1.Models
     
     public partial class Asiakasluokittelu
     {
-        public int Asiakasnumero { get; set; }
+        public int LuokitteluID { get; set; }
         public Nullable<bool> Eläkeläisalennus { get; set; }
         public Nullable<bool> Tv { get; set; }
         public Nullable<bool> Pöytäkone { get; set; }
@@ -23,9 +23,7 @@ namespace ProtoV1.Models
         public Nullable<bool> Tabletti { get; set; }
         public Nullable<bool> Mokkula { get; set; }
         public Nullable<bool> Wlan { get; set; }
-        public int LuokitteluID { get; set; }
-        public Nullable<bool> Mokkulanetti { get; set; }
-        public Nullable<bool> Wlannetti { get; set; }
+        public int Asiakasnumero { get; set; }
     
         public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot { get; set; }
     }

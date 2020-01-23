@@ -5,18 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="321c0e33b7544337afaae762eb25d2ac" Name="Diagram1">
-        <EntityTypeShape EntityType="SenioritModel.Asiakasluokittelu" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.Asiakastapahtumat" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.AsiakkaanPerustiedot" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.Laskutustiedot" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.Logins" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.Postitoimipaikat" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SenioritModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <AssociationConnector Association="SenioritModel.FK_Asiakastapahtumat_AsiakkaanPerustiedot" ManuallyRouted="false" />
-        <AssociationConnector Association="SenioritModel.FK_AsiakkaanPerustiedot_Postitoimipaikat" ManuallyRouted="false" />
-        <AssociationConnector Association="SenioritModel.FK_Laskutustiedot_AsiakkaanPerustiedot" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SenioritModel.Asiakasluokittelu" Width="1.5" PointX="5.25" PointY="4.75" />
+        <EntityTypeShape EntityType="SenioritModel.Asiakastapahtumat" Width="1.5" PointX="5.25" PointY="8.75" />
+        <EntityTypeShape EntityType="SenioritModel.AsiakkaanPerustiedot" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="SenioritModel.Laskutustiedot" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="SenioritModel.Logins" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SenioritModel.Postitoimipaikat" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="SenioritModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" />
         <AssociationConnector Association="SenioritModel.FK_Asiakasluokittelu_AsiakkaanPerustiedot" />
-        <AssociationConnector Association="SenioritModel.FK_AsiakkaanPerustiedot_AsiakkaanPerustiedot" />
+        <AssociationConnector Association="SenioritModel.FK_Asiakastapahtumat_AsiakkaanPerustiedot" />
+        <AssociationConnector Association="SenioritModel.FK_AsiakkaanPerustiedot_Postitoimipaikat" />
+        <AssociationConnector Association="SenioritModel.FK_Laskutustiedot_AsiakkaanPerustiedot" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

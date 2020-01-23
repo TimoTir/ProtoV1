@@ -1,73 +1,88 @@
-﻿@model ProtoV1.Models.AsiakkaanPerustiedot
+﻿
+@model IEnumerable<ProtoV1.Models.AsiakkaanPerustiedot>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Asiakkaanperustiedot</h2>
-@using (Html.BeginForm(FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.LabelFor(model => model.Asiakasnumero, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Asiakasnumero, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+<h2>Asiakkaan perustiedot</h2>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Etunimi, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Etunimi, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Sukunimi, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Sukunimi, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+ <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asiakasnumero)
+            </th>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Puhelin, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Puhelin, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+            <th>
+                @Html.DisplayNameFor(model => model.Etunimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sukunimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Osoite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postinumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postitoimipaikat.Postitoimipaikka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Puhelin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sähköposti)
+            </th>
+        </tr>
+    </thead>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Osoite, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Osoite, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+    <tbody>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Postinumero, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Postinumero, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Asiakasnumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etunimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sukunimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Osoite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postinumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postitoimipaikat.Postitoimipaikka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Puhelin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sähköposti)
+            </td>
 
-    @*<div class="form-group">
-            <label for="Postitoimipaikat">Postitoimipaikka</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Postinumero, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Asiakasnumero">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Asiakasnumero">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Asiakasnumero">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Sähköposti, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Sähköposti, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Tallenna muutokset" class="btn btn-default" />
-            @*<input type="submit" value="Peruuta" class="btn btn-default"/>*@
-        </div>
-    </div>
-}
+
+
+
+
+
 
 

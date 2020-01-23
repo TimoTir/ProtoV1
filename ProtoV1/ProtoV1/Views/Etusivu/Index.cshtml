@@ -23,13 +23,14 @@
 
         @foreach (ProtoV1.Models.AsiakkaanPerustiedot prod in Model)
         {
-            <tr>
-                <td>@prod.Asiakasnumero</td>
-                <td>@prod.Etunimi</td>
-                <td>@prod.Sukunimi</td>
-                <td>@prod.Osoite</td>
-                <td>@prod.Postinumero</td>
-            </tr>
+        <tr>
+            <td>@prod.Asiakasnumero</td>
+            <td>@prod.Etunimi</td>
+            <td>@prod.Sukunimi</td>
+            <td>@prod.Osoite</td>
+            <td>@prod.Postinumero</td>
+            <td>@prod.Postitoimipaikat.Postitoimipaikka</td>
+        </tr>
         }
     </tbody>
 </table>
