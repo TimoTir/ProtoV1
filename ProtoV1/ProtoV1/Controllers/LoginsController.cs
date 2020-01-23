@@ -29,9 +29,9 @@ namespace ProtoV1.Controllers
             if (LoggedUser != null)
             {
                 ViewBag.LoginMessage = "Successfull login";
-                ViewBag.LoginId = LoggedUser.LoginID;
+                ViewBag.LoginId = LoggedUser.LoginId;
                 Session["UserName"] = LoggedUser.Käyttäjätunnus;
-                Session["LoginId"] = LoggedUser.LoginID;
+                Session["LoginId"] = LoggedUser.LoginId;
                 return RedirectToAction("Index", "Etusivu");
             }
             else
