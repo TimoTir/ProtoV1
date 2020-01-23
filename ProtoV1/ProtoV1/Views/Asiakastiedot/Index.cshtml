@@ -13,68 +13,109 @@
             <th>
                 @Html.DisplayNameFor(model => model.Asiakasnumero)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asiakasnumero)
+                </td>
+            }
+        </tr>
 
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Etunimi)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Etunimi)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Sukunimi)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sukunimi)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Osoite)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Osoite)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Postinumero)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postinumero)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Postitoimipaikat.Postitoimipaikka)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postitoimipaikat.Postitoimipaikka)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Puhelin)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puhelin)
+                </td>
+            }
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Sähköposti)
             </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sähköposti)
+                </td>
+            }
         </tr>
     </thead>
 
     <tbody>
-
-        @foreach (var item in Model)
-        {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Asiakasnumero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Etunimi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sukunimi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Osoite)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Postinumero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Postitoimipaikat.Postitoimipaikka)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Puhelin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sähköposti)
-            </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Asiakasnumero">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Asiakasnumero">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Asiakasnumero">Delete</a>
-            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.ActionLink("Lisää uusi asiakas", "Edit", new { asiakasnumero = item.Asiakasnumero })
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                @Html.ActionLink("Seuraava", "Details", new { asiakasnumero = item.Asiakasnumero })
+                </td>
+            }
         </tr>
-        }
     </tbody>
 </table>
 
