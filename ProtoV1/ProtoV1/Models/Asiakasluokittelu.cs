@@ -11,7 +11,6 @@ namespace ProtoV1.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Asiakasluokittelu
     {
@@ -22,7 +21,12 @@ namespace ProtoV1.Models
         public Nullable<bool> Kannettava { get; set; }
         public Nullable<bool> Matkapuhelin { get; set; }
         public Nullable<bool> Tabletti { get; set; }
+        public Nullable<bool> Mokkula { get; set; }
+        public Nullable<bool> Wlan { get; set; }
+        public int LuokitteluID { get; set; }
         public Nullable<bool> Mokkulanetti { get; set; }
         public Nullable<bool> Wlannetti { get; set; }
+    
+        public virtual AsiakkaanPerustiedot AsiakkaanPerustiedot { get; set; }
     }
 }
