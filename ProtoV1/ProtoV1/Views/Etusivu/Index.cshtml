@@ -1,8 +1,39 @@
 ﻿
+@model IEnumerable<ProtoV1.Models.AsiakkaanPerustiedot>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Etusivu </h2>
+<h2>Etusivu</h2>
+
+<p> Asiakkaan perustiedot </p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Asiakasnumero</th>
+            <th>Etunimi</th>
+            <th>Sukunimi</th>
+            <th>Osoite</th>
+            <th>Postinumero</th>
+            <th>Postitoimipaikka</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (ProtoV1.Models.AsiakkaanPerustiedot prod in Model)
+        {
+            <tr>
+                <td>@prod.Asiakasnumero</td>
+                <td>@prod.Etunimi</td>
+                <td>@prod.Sukunimi</td>
+                <td>@prod.Osoite</td>
+                <td>@prod.Postinumero</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
 
 
