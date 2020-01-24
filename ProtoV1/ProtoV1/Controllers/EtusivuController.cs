@@ -22,16 +22,12 @@ namespace ProtoV1.Controllers
         }
         public ActionResult Details(int? id)
         {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //AsiakkaanPerustiedot asiakkaanPerustiedot = db.AsiakkaanPerustiedot.Find(id);
-            //if (asiakkaanPerustiedot == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            return View();
+            AsiakkaanPerustiedot asiakkaanPerustiedot = db.AsiakkaanPerustiedot.Find(id);
+
+            if (asiakkaanPerustiedot == null)
+                return View("NotFound");
+            else
+                return View("Details", asiakkaanPerustiedot);
         }
     }
 }
