@@ -107,11 +107,11 @@
             {
                 <td>
                     @Html.ActionLink("Lisää uusi asiakas", "Edit", new { asiakasnumero = item.Asiakasnumero })
-                </td>
-                <td>
+               
+                @*<td>
                     &nbsp;
-                </td>
-                <td>
+                </td>*@
+                
                 @Html.ActionLink("Seuraava", "Details", new { asiakasnumero = item.Asiakasnumero })
                 </td>
             }

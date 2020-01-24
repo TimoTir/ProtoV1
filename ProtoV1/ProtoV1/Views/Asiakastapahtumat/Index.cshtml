@@ -5,6 +5,7 @@
 
 <h2>Asiakastapahtumat</h2>
 
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -32,7 +33,8 @@
 
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <input type="button" value="Lisää uusi tapahtuma" class="btn btn-default" />
+        @*<input type="button" value="Lisää uusi tapahtuma" class="btn btn-default" />*@
+        @Html.ActionLink("Lisää uusi tapahtuma", "Create", new { @class = "btn btn-primary btn-sm"} )
     </div>
 </div>
 
