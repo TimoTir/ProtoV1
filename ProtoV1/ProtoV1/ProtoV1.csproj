@@ -237,6 +237,7 @@
     <Content Include="Views\Logins\Index.cshtml" />
     <Content Include="Views\Asiakastapahtumat\Create.cshtml" />
     <Content Include="Views\Asiakastiedot\Create.cshtml" />
+    <Content Include="Views\Etusivu\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
