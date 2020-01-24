@@ -15,7 +15,7 @@ namespace ProtoV1.Controllers
         {
             SenioritEntities db = new SenioritEntities();
             return View(db.Asiakastapahtumat.ToList());
-            //db.Dispose(); << Huom! lisää tämä!
+            // db.Dispose();
         }
         public ActionResult Create()
         {

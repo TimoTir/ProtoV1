@@ -9,7 +9,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Asiakasnumero</th>
+            <th>Asiakas</th>
             <th>Päivämäärä</th>
             <th>Yhteydenotto</th>
             <th>Tapahtuman kuvaus</th>
@@ -21,7 +21,7 @@
         @foreach (ProtoV1.Models.Asiakastapahtumat atap in Model)
         {
             <tr>
-                <td>@atap.Asiakasnumero</td>
+                <td>@atap.AsiakkaanPerustiedot.Etunimi @atap.AsiakkaanPerustiedot.Sukunimi</td>
                 <td>@atap.Päivämäärä</td>
                 <td>@atap.Yhteydenotto</td>
                 <td>@atap.Kuvaus</td>
