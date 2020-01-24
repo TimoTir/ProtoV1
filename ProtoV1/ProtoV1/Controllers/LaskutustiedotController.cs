@@ -14,9 +14,9 @@ namespace ProtoV1.Controllers
         private SenioritEntities db = new SenioritEntities();
         public ActionResult Index()
         {
+
             SenioritEntities db = new SenioritEntities();
-            return View();
-            //db.Dispose(); << Huom! lisää tämä!
+            return View(db.Laskutustiedot.ToList());
 
         }
     }
