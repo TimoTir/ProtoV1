@@ -1,4 +1,4 @@
-﻿@model ProtoV1.Models.AsiakkaanPerustiedot
+﻿@model IEnumerable<ProtoV1.Models.AsiakkaanPerustiedot>
 
 @{
     ViewBag.Title = "Details";
@@ -6,60 +6,104 @@
 
 <h2>Asiakastiedot</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Etunimi)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Etunimi)
-        </dd>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asiakasnumero)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asiakasnumero)
+                </td>
+            }
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sukunimi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sukunimi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Osoite)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Osoite)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Puhelin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Puhelin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sähköposti)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sähköposti)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Postitoimipaikat.Postitoimipaikka)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Postitoimipaikat.Postitoimipaikka)
-        </dd>
-
-    </dl>
-</div>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Etunimi)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Etunimi)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sukunimi)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sukunimi)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Osoite)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Osoite)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Postinumero)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postinumero)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Postitoimipaikat.Postitoimipaikka)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postitoimipaikat.Postitoimipaikka)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Puhelin)
+            </th>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puhelin)
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Laskutustiedot)
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asiakastapahtumat)
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asiakasluokittelu)
+            </th>
+        </tr>
+    </thead>
+</table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Asiakasnumero })
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Takaisin", "Index")
 </p>

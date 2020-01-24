@@ -20,14 +20,10 @@ namespace ProtoV1.Controllers
             return View(model);
             //db.Dispose(); << Huom! lisää tämä!
         }
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            AsiakkaanPerustiedot asiakkaanPerustiedot = db.AsiakkaanPerustiedot.Find(id);
-
-            if (asiakkaanPerustiedot == null)
-                return View("NotFound");
-            else
-                return View("Details", asiakkaanPerustiedot);
+            List<AsiakkaanPerustiedot> model = db.AsiakkaanPerustiedot.ToList();
+            return View(model);
         }
     }
 }

@@ -6,8 +6,6 @@
 
 <h2>Etusivu</h2>
 
-<p> Asiakkaan perustiedot </p>
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -23,22 +21,18 @@
 
         @foreach (ProtoV1.Models.AsiakkaanPerustiedot prod in Model)
         {
-            <tr>
-                <td>@prod.Asiakasnumero</td>
-                <td>@prod.Etunimi</td>
-                <td>@prod.Sukunimi</td>
-                <td>@prod.Osoite</td>
-                <td>@prod.Postinumero</td>
-                <td>@prod.Postitoimipaikat.Postitoimipaikka</td>
-            </tr>
+        <tr>
+            <td>@prod.Asiakasnumero</td>
+            <td>@prod.Etunimi</td>
+            <td>@prod.Sukunimi</td>
+            <td>@prod.Osoite</td>
+            <td>@prod.Postinumero</td>
+            <td>@prod.Postitoimipaikat.Postitoimipaikka</td>
+            <td><button>@Html.ActionLink("Asiakastiedot", "Details")</button></td>
+        </tr>
         }
     </tbody>
 </table>
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <button>@Html.ActionLink("Lisää uusi asiakas", "Details")</button>
-    </div>
-</div>
 
 
 
