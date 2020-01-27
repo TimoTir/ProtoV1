@@ -100,12 +100,15 @@
         </tr>
     </thead>
 </table>
-
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <button>@Html.ActionLink("Lisää uusi laskutustieto", "Create")</button>
+        <button>@Html.ActionLink("Tallenna muutokset", "Index")</button> &nbsp; &nbsp; &nbsp; &nbsp;<button>@Html.ActionLink("Seuraava", "Index", "Asiakasluokittelu")</button>
     </div>
 </div>
+<div>
+    @Html.ActionLink("Takaisin", "Index", "Asiakastiedot")
+</div>
+
 
 
 
