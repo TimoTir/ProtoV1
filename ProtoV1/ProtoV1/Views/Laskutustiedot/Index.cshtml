@@ -99,25 +99,14 @@
             }
         </tr>
     </thead>
-
-    <tbody>
-        <tr>
-
-            @foreach (var item in Model)
-            {
-                <td>
-                    @Html.ActionLink("Lisää uusi asiakas", "Edit", new { asiakasnumero = item.Asiakasnumero })
-
-                    @*<td>
-                            &nbsp;
-                        </td>*@
-
-                    @Html.ActionLink("Seuraava", "Details", new { asiakasnumero = item.Asiakasnumero })
-                </td>
-            }
-        </tr>
-    </tbody>
 </table>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <button>@Html.ActionLink("Lisää uusi laskutustieto", "Create")</button>
+    </div>
+</div>
+
 
 
 

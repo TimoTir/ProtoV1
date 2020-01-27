@@ -19,11 +19,22 @@ namespace ProtoV1.Controllers
             return View(db.Laskutustiedot.ToList());
 
         }
+        public ActionResult Create()
+        {
+            return View();
+            //db.Dispose(); << Huom! lisää tämä!
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Asiakasnumero, Etunimi, Sukunimi, Puhelin, Osoite, Postinumero, Postitoimipaikka, Sähköposti")] Laskutustiedot laskutustiedot)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Laskutustiedot.Add(laskutustiedot);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(laskutustiedot);
+        }
     }
 }
-    
-            
-        
-         
-        
-    
