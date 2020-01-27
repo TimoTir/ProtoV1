@@ -6,6 +6,8 @@
 
 <h2>Asiakkaan perustiedot</h2>
 
+<button>@Html.ActionLink("Lisää uusi asiakas", "Create")</button>
+
 
 <table class="table table-hover">
     <thead>
@@ -102,7 +104,7 @@
 </table>
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <button>@Html.ActionLink("Lisää uusi asiakas", "Create")</button> &nbsp; &nbsp; &nbsp; &nbsp;<button>@Html.ActionLink("Seuraava", "Index")</button>
+        <button>@Html.ActionLink("Tallenna muutokset", "Index")</button> &nbsp; &nbsp; &nbsp; &nbsp;<button>@Html.ActionLink("Seuraava", "Index", "Laskutustiedot")</button>
     </div>
 </div>
      
