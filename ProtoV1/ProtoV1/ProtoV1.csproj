@@ -239,6 +239,7 @@
     <Content Include="Views\Asiakastiedot\Create.cshtml" />
     <Content Include="Views\Etusivu\Details.cshtml" />
     <Content Include="Views\Laskutustiedot\Create.cshtml" />
+    <Content Include="Views\Asiakasluokittelu\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

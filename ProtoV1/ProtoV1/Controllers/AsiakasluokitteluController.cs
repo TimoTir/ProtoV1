@@ -18,5 +18,23 @@ namespace ProtoV1.Controllers
             return View(/*db.Asiakasluokittelu.ToList()*/);
             //db.Dispose(); << Huom! lisää tämä!
         }
+
+        public ActionResult Create()
+        {
+            return View();
+            //db.Dispose(); << Huom! lisää tämä!
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Asiakasnumero")] Asiakasluokittelu asiakasluokittelu)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Asiakasluokittelu.Add(asiakasluokittelu);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(asiakasluokittelu);
+        }
     }
 }
